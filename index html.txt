@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <title>Karibu Safepool Vnex</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f2f2f2;
+      padding-top: 100px;
+    }
+    .box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    button {
+      margin: 10px;
+      padding: 12px 25px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Je, una miaka 18 au zaidi?</h2>
+    <button onclick="verify(true)">Ndio</button>
+    <button onclick="verify(false)">Hapana</button>
+  </div>
+
+  <script>
+    function verify(isOldEnough) {
+      if (isOldEnough) {
+        localStorage.setItem("ageVerified", "true");
+        window.location.href = "adult.html";
+      } else {
+        alert("Samahani, huwezi kufikia maudhui haya.");
+        window.location.href = "https://www.google.com";
+      }
+    }
+
+    if (localStorage.getItem("ageVerified") === "true") {
+      window.location.href = "adult.html";
+    }
+  </script>
+</body>
+</html>
